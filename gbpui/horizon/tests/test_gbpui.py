@@ -26,3 +26,6 @@ class TestGbpui(base.TestCase):
 
     def test_something(self):
         pass
+
+    def __hash__(self):
+        return id(self)

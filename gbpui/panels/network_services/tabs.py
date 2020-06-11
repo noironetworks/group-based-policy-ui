@@ -11,6 +11,9 @@
 #    under the License.
 
 import json
+
+import tables as ns_tables
+
 import yaml
 
 from django.contrib.staticfiles.templatetags.staticfiles import static
@@ -23,8 +26,6 @@ from horizon import tabs
 
 from gbpui import client
 from gbpui import column_filters as gfilters
-
-import tables as ns_tables
 
 
 class ServiceChainSpecTab(tabs.TableTab):

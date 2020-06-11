@@ -10,6 +10,10 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import time
+
+import tables
+
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
@@ -21,10 +25,6 @@ from openstack_dashboard.dashboards.project.instances import tables as itables
 
 from gbpui import client
 from gbpui import column_filters as gfilters
-
-import tables
-
-import time
 
 PTGsTable = tables.PTGsTable
 External_PTGsTable = tables.ExternalPTGsTable

@@ -9,6 +9,8 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+import logging
+
 import re
 
 from django.conf import settings
@@ -25,8 +27,6 @@ from gbpui import client
 
 from netaddr import IPAddress
 from netaddr import IPNetwork
-
-import logging
 
 LOG = logging.getLogger(__name__)
 
