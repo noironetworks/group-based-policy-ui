@@ -14,34 +14,34 @@
         - openstack-tox-pep8:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/stein
+                override-checkout: stable/train
         - openstack-tox-py27:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/stein
+                override-checkout: stable/train
         - openstack-tox-py35:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/stein
+                override-checkout: stable/train
         - test-release-openstack:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/stein
+                override-checkout: stable/train
     gate:
       jobs:
         - openstack-tox-pep8:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/stein
+                override-checkout: stable/train
         - openstack-tox-py27:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/stein
+                override-checkout: stable/train
         - openstack-tox-py35:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/stein
+                override-checkout: stable/train
         - test-release-openstack:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/stein
+                override-checkout: stable/train
