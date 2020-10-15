@@ -8,6 +8,10 @@
 #
 # Hacking should appear first in case something else depends on pep8
 hacking>=1.1.0,<2 # Apache-2.0
+# remove this pyflakes from here once you bump the
+# hacking to 3.2.0 or above. hacking 3.2.0 takes
+# care of pyflakes version compatibilty.
+pyflakes>=2.1.1
 # Replacing Horizon git URL reference as stable/train constraints are applied.
 horizon
 #
