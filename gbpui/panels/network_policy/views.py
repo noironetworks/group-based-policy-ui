@@ -9,7 +9,8 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
-from django.core.urlresolvers import reverse
+
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
@@ -19,9 +20,9 @@ from horizon import tabs
 from gbpui import client
 from gbpui.common import forms as gbforms
 
-import forms as np_forms
-import tables as np_tables
-import tabs as np_tabs
+from gbpui.panels.network_policy import forms as np_forms
+from gbpui.panels.network_policy import tables as np_tables
+from gbpui.panels.network_policy import tabs as np_tabs
 
 
 class IndexView(tabs.TabbedTableView):

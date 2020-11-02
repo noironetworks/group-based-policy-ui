@@ -12,9 +12,9 @@
 
 import time
 
-import tables
+from gbpui.panels.policytargets import tables
 
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
