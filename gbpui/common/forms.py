@@ -14,7 +14,7 @@
 
 from horizon import forms
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 
 class ReversingModalFormView(forms.ModalFormView):
