@@ -12,8 +12,8 @@
 
 import json
 
-from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse  # noqa
+from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
@@ -25,9 +25,9 @@ from gbpui import client
 from gbpui.common import forms as gbforms
 
 
-import forms as policy_target_forms
-import tabs as policy_target_tabs
-import workflows as policy_target_workflows
+import gbpui.panels.policytargets.forms as policy_target_forms
+import gbpui.panels.policytargets.tabs as policy_target_tabs
+import gbpui.panels.policytargets.workflows as policy_target_workflows
 
 from openstack_dashboard import api
 
