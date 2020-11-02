@@ -12,8 +12,8 @@
 from horizon import forms
 from horizon import tabs
 
-import forms as ns_forms
-import tabs as ns_tabs
+from gbpui.panels.network_services import forms as ns_forms
+from gbpui.panels.network_services import tabs as ns_tabs
 
 from django.utils.translation import ugettext_lazy as _
 from gbpui.common import forms as gbforms

@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
@@ -19,7 +19,7 @@ from horizon import tabs
 from gbpui import client
 from gbpui import column_filters as gfilters
 
-import tables
+from gbpui.panels.application_policy import tables
 
 PolicyRulesTable = tables.PolicyRulesTable
 PolicyClassifiersTable = tables.PolicyClassifiersTable

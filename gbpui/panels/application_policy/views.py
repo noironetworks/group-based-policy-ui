@@ -9,14 +9,15 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-from django.core.urlresolvers import reverse
+
+from django.urls import reverse
 
 from horizon import tabs
 from horizon import workflows
 
-import forms as policy_rule_set_forms
-import tabs as policy_rule_set_tabs
-import workflows as policy_rule_set_workflows
+from gbpui.panels.application_policy import forms as policy_rule_set_forms
+from gbpui.panels.application_policy import tabs as policy_rule_set_tabs
+from gbpui.panels.application_policy import workflows as prs_workflows
 
 from django.utils.translation import ugettext_lazy as _
 from gbpui.common import forms as gbforms
@@ -26,9 +27,9 @@ PolicyRuleSetDetailsTabs = policy_rule_set_tabs.PolicyRuleSetDetailsTabs
 PolicyRuleDetailsTabs = policy_rule_set_tabs.PolicyRuleDetailsTabs
 PolicyClassifierDetailsTabs = policy_rule_set_tabs.PolicyClassifierDetailsTabs
 PolicyActionDetailsTabs = policy_rule_set_tabs.PolicyActionDetailsTabs
-AddPolicyRuleSet = policy_rule_set_workflows.AddContract
-AddPolicyRule = policy_rule_set_workflows.AddPolicyRule
-AddPolicyClassifier = policy_rule_set_workflows.AddPolicyClassifier
+AddPolicyRuleSet = prs_workflows.AddContract
+AddPolicyRule = prs_workflows.AddPolicyRule
+AddPolicyClassifier = prs_workflows.AddPolicyClassifier
 
 
 class IndexView(tabs.TabbedTableView):

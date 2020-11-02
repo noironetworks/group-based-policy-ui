@@ -12,7 +12,8 @@
 
 from itertools import chain
 
-from django.core import urlresolvers
+from django import urls
+
 from django.forms import fields
 from django.forms import TextInput
 from django.forms import widgets
@@ -43,11 +44,11 @@ class DynamicMultiSelectWidget(widgets.SelectMultiple):
             return self.add_item_link()
         try:
             if self.add_item_link_args:
-                return urlresolvers.reverse(self.add_item_link,
+                return urls.reverse(self.add_item_link,
                                             args=self.add_item_link_args)
             else:
-                return urlresolvers.reverse(self.add_item_link)
-        except urlresolvers.NoReverseMatch:
+                return urls.reverse(self.add_item_link)
+        except urls.NoReverseMatch:
             return self.add_item_link
 
 
@@ -116,7 +117,7 @@ class TransferTableWidget(widgets.SelectMultiple):
         options = self.render_options(choices, selected)
 
         if self.add_item_link is not None:
-            final_attrs['add_item_link'] = urlresolvers.reverse(
+            final_attrs['add_item_link'] = urls.reverse(
                 self.add_item_link
             )
 
