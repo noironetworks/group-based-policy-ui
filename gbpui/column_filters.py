@@ -13,7 +13,7 @@
 import os
 
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.safestring import mark_safe
 
 from gbpui import client

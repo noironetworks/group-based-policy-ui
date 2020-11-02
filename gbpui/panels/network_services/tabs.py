@@ -12,12 +12,12 @@
 
 import json
 
-import tables as ns_tables
+from gbpui.panels.network_services import tables as ns_tables
 
 import yaml
 
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions

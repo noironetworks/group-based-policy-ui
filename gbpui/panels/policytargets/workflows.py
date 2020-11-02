@@ -14,8 +14,8 @@ import logging
 import re
 
 from django.conf import settings
-from django.core.urlresolvers import reverse
 from django import shortcuts
+from django.urls import reverse
 from django.utils import html
 from django.utils.text import normalize_newlines  # noqa
 from django.utils.translation import ugettext_lazy as _
