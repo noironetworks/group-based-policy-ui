@@ -12,9 +12,9 @@
 
 from django.conf.urls import url  # noqa
 
-import views
+from gbpui.panels.policytargets import views
 
-import restApi
+from gbpui.panels.policytargets import restApi
 
 urlpatterns = [
     url(r'^$',
