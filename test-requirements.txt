@@ -11,7 +11,7 @@ hacking>=1.1.0,<2 # Apache-2.0
 # Replacing Horizon git URL reference as stable/train constraints are applied.
 horizon
 #
-bandit!=1.6.0,>=1.4.0 # Apache-2.0
+bandit!=1.6.0,>=1.4.0,<1.6.3 # Apache-2.0
 django-appconf<=1.0.3
 coverage!=4.4,>=4.0 # Apache-2.0
 flake8-import-order==0.12 # LGPLv3
