@@ -45,16 +45,16 @@ class DeleteServiceChainSpecLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Service Chain Spec",
-            u"Delete Service Chain Specs",
+            "Delete Service Chain Spec",
+            "Delete Service Chain Specs",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Service Chain Spec",
-            u"Scheduled deletion of Service Chain Specs",
+            "Scheduled deletion of Service Chain Spec",
+            "Scheduled deletion of Service Chain Specs",
             count
         )
 
@@ -105,16 +105,16 @@ class DeleteServiceChainNodeLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Service Chain Node",
-            u"Delete Service Chain Nodes",
+            "Delete Service Chain Node",
+            "Delete Service Chain Nodes",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Service Chain Node",
-            u"Scheduled deletion of Service Chain Nodes",
+            "Scheduled deletion of Service Chain Node",
+            "Scheduled deletion of Service Chain Nodes",
             count
         )
 
@@ -166,16 +166,16 @@ class DeleteServiceChainInstanceLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Service Chain Instance",
-            u"Delete Service Chain Instances",
+            "Delete Service Chain Instance",
+            "Delete Service Chain Instances",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Service Chain Instance",
-            u"Scheduled deletion of Service Chain Instances",
+            "Scheduled deletion of Service Chain Instance",
+            "Scheduled deletion of Service Chain Instances",
             count
         )
 
@@ -219,16 +219,16 @@ class DeleteServiceProfileLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Service Chain Profile",
-            u"Delete Service Chain Profiles",
+            "Delete Service Chain Profile",
+            "Delete Service Chain Profiles",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Service Chain Profile",
-            u"Scheduled deletion of Service Chain Profiles",
+            "Scheduled deletion of Service Chain Profile",
+            "Scheduled deletion of Service Chain Profiles",
             count
         )
 

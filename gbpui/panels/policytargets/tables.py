@@ -49,16 +49,16 @@ class DeletePTGLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Group",
-            u"Delete Groups",
+            "Delete Group",
+            "Delete Groups",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Group",
-            u"Scheduled deletion of Groups",
+            "Scheduled deletion of Group",
+            "Scheduled deletion of Groups",
             count
         )
 
@@ -122,16 +122,16 @@ class DeleteExternalPTGLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete External Group",
-            u"Delete External Groups",
+            "Delete External Group",
+            "Delete External Groups",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of External Group",
-            u"Scheduled deletion of External Groups",
+            "Scheduled deletion of External Group",
+            "Scheduled deletion of External Groups",
             count
         )
 
@@ -192,16 +192,16 @@ class RemoveVMLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Member",
-            u"Delete Members",
+            "Delete Member",
+            "Delete Members",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Deleted Member",
-            u"Deleted Members",
+            "Deleted Member",
+            "Deleted Members",
             count
         )
 

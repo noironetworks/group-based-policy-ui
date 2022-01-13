@@ -46,16 +46,16 @@ class DeleteL2PolicyLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete L2 Policy",
-            u"Delete L2 Policies",
+            "Delete L2 Policy",
+            "Delete L2 Policies",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of L2 Policy",
-            u"Scheduled deletion of L2 Policies",
+            "Scheduled deletion of L2 Policy",
+            "Scheduled deletion of L2 Policies",
             count
         )
 
@@ -107,16 +107,16 @@ class DeleteL3PolicyLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete L3 Policy",
-            u"Delete L3 Policies",
+            "Delete L3 Policy",
+            "Delete L3 Policies",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of L3 Policy",
-            u"Scheduled deletion of L3 Policies",
+            "Scheduled deletion of L3 Policy",
+            "Scheduled deletion of L3 Policies",
             count
         )
 
@@ -170,16 +170,16 @@ class DeleteServicePolicyLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Network Service Policy",
-            u"Delete Network ServiceL3 Policies",
+            "Delete Network Service Policy",
+            "Delete Network ServiceL3 Policies",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Network Service Policy",
-            u"Scheduled deletion of Network Service Policies",
+            "Scheduled deletion of Network Service Policy",
+            "Scheduled deletion of Network Service Policies",
             count
         )
 
@@ -235,16 +235,16 @@ class DeleteExternalConnectivityLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete External Connectivity Policy",
-            u"Delete External Connectivity Policies",
+            "Delete External Connectivity Policy",
+            "Delete External Connectivity Policies",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of External Connectivity Policy",
-            u"Scheduled deletion of External Connectivity Policies",
+            "Scheduled deletion of External Connectivity Policy",
+            "Scheduled deletion of External Connectivity Policies",
             count
         )
 
@@ -284,16 +284,16 @@ class DeleteNATPoolLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete NAT Pool",
-            u"Delete NAT Pools",
+            "Delete NAT Pool",
+            "Delete NAT Pools",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of NAT Pool",
-            u"Scheduled deletion of NAT Pools",
+            "Scheduled deletion of NAT Pool",
+            "Scheduled deletion of NAT Pools",
             count
         )
 
