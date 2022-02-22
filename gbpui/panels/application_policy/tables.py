@@ -47,16 +47,16 @@ class DeletePolicyRuleSetLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Policy Rule Set",
-            u"Delete Policy Rule Sets",
+            "Delete Policy Rule Set",
+            "Delete Policy Rule Sets",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Policy Rule Set",
-            u"Scheduled deletion of Policy Rule Sets",
+            "Scheduled deletion of Policy Rule Set",
+            "Scheduled deletion of Policy Rule Sets",
             count
         )
 
@@ -89,16 +89,16 @@ class DeletePolicyRuleLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Policy Rule",
-            u"Delete Policy Rules",
+            "Delete Policy Rule",
+            "Delete Policy Rules",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Policy Rule",
-            u"Scheduled deletion of Policy Rules",
+            "Scheduled deletion of Policy Rule",
+            "Scheduled deletion of Policy Rules",
             count
         )
 
@@ -131,16 +131,16 @@ class DeletePolicyClassifierLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Policy Classifier",
-            u"Delete Policy Classifiers",
+            "Delete Policy Classifier",
+            "Delete Policy Classifiers",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Policy Classifier",
-            u"Scheduled deletion of Policy Classifiers",
+            "Scheduled deletion of Policy Classifier",
+            "Scheduled deletion of Policy Classifiers",
             count
         )
 
@@ -173,16 +173,16 @@ class DeletePolicyActionLink(tables.DeleteAction):
     @staticmethod
     def action_present(count):
         return ungettext_lazy(
-            u"Delete Policy Action",
-            u"Delete Policy Actions",
+            "Delete Policy Action",
+            "Delete Policy Actions",
             count
         )
 
     @staticmethod
     def action_past(count):
         return ungettext_lazy(
-            u"Scheduled deletion of Policy Action",
-            u"Scheduled deletion of Policy Actions",
+            "Scheduled deletion of Policy Action",
+            "Scheduled deletion of Policy Actions",
             count
         )
 

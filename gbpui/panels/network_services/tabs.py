@@ -160,7 +160,7 @@ class ServiceChainNodeDetailsTab(tabs.Tab):
 
     def prepare_config_as_tree(self, config):
         tree = []
-        for key, value in config.iteritems():
+        for key, value in config.items():
             node = {}
             if isinstance(value, dict):
                 node = self.prepare_root_node(value)
@@ -184,7 +184,7 @@ class ServiceChainNodeDetailsTab(tabs.Tab):
 
     def prepare_children(self, obj):
         children = []
-        for key, value in obj.iteritems():
+        for key, value in obj.items():
             node = {}
             child = self.json2array(value)
             node["text"] = key
@@ -195,7 +195,7 @@ class ServiceChainNodeDetailsTab(tabs.Tab):
 
     def json2array(self, obj):
         arr = []
-        for key, value in obj.iteritems():
+        for key, value in obj.items():
             node = {}
             if isinstance(value, dict):
                 children = self.json2array(value)
