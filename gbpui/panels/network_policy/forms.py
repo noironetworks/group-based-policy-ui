@@ -81,9 +81,11 @@ class AddL3PolicyForm(forms.SelfHandlingForm):
             ipversion = int(cleaned_data['ip_version'])
             subnet_prefix_length = int(cleaned_data['subnet_prefix_length'])
             msg = _("Subnet prefix out of range.")
-            if ipversion == 4 and subnet_prefix_length not in range(2, 31):
+            if ipversion == 4 and subnet_prefix_length not in list(
+                    range(2, 31)):
                 raise forms.ValidationError(msg)
-            if ipversion == 6 and subnet_prefix_length not in range(2, 128):
+            if ipversion == 6 and subnet_prefix_length not in list(
+                    range(2, 128)):
                 raise forms.ValidationError(msg)
         return cleaned_data
 
@@ -155,7 +157,7 @@ class UpdateL3PolicyForm(AddL3PolicyForm):
             if bool(l3['external_segments']):
                 es_choices = []
                 es_initial = []
-                for key, value in l3['external_segments'].items():
+                for key, value in list(l3['external_segments'].items()):
                     val = 'ES:' + key + ',IP:' + value[0]
                     es_choices.append((val, val))
                     es_initial.append(val)
@@ -173,9 +175,11 @@ class UpdateL3PolicyForm(AddL3PolicyForm):
             ipversion = int(cleaned_data['ip_version'])
             subnet_prefix_length = int(cleaned_data['subnet_prefix_length'])
             msg = _("Subnet prefix out of range.")
-            if ipversion == 4 and subnet_prefix_length not in range(2, 31):
+            if ipversion == 4 and subnet_prefix_length not in list(
+                    range(2, 31)):
                 raise forms.ValidationError(msg)
-            if ipversion == 6 and subnet_prefix_length not in range(2, 128):
+            if ipversion == 6 and subnet_prefix_length not in list(
+                    range(2, 128)):
                 raise forms.ValidationError(msg)
             if cleaned_data['external_segments']:
                 dic = {}
