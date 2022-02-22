@@ -49,7 +49,7 @@ def update_service_policy_attributes(policy):
         for item in np:
             dl = ["<dl class='dl-horizontal'>"]
             dl.extend(["<dt>%s<dt><dd>%s</dd>" %
-                (k, v) for k, v in item.items()])
+                (k, v) for k, v in list(item.items())])
             dl.append("</dl>")
             tags.append("".join(dl))
         params = mark_safe("".join(tags))
@@ -298,7 +298,7 @@ def update_l3_policy_attributes(request, l3_policy):
             reverse(url, kwargs={'external_connectivity_id': x.id}) + \
              "'>" + x.name + "</a>" + " : " + \
             l3_policy.external_segments[x.id][0] + "</li>"
-        for ec in l3_policy.external_segments.keys():
+        for ec in list(l3_policy.external_segments.keys()):
             external_connectivity = client.get_externalconnectivity(request,
                                                                     ec)
             value.append(li(external_connectivity))
