@@ -22,12 +22,25 @@
         .factory('gbpui.group-member.launch-context.service', launchContextService);
 
 
-    launchContextService.$inject = [];
+    launchContextService.$inject = [
+        '$location',
+        'horizon.framework.util.http.service',
+    ];
 
-    function launchContextService() {
+    function launchContextService($location,apiService) {
+        var policyGroups = {'data':[],'status':0};                                                                                                                                       
+        !$location.absUrl().includes('login') && apiService
+            .get('project/policytargets/policy_target_groups')
+            .error(function () {  
+                policyGroups.status = 1   
+            }).then(data => { 
+                policyGroups.data = data.data;  
+                policyGroups.status = 1;
+            });
         return {
             launchContext: {
-                defaults: []
+                defaults: [],
+                policyGroups,
             }
         };
     }
