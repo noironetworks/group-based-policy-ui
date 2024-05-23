@@ -167,7 +167,9 @@ class UpdatePolicyActionForm(BaseUpdateForm):
             self.fields['name'].initial = pa.name
             self.fields['description'].initial = pa.description
             self.fields['shared'].initial = pa.shared
-        except Exception:
+        except KeyError:
+            pass
+        except AttributeError:
             pass
 
     def handle(self, request, context):

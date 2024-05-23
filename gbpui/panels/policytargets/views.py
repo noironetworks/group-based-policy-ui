@@ -66,7 +66,9 @@ class PTGDetailsView(tabs.TabbedTableView):
             policy_target = client.policy_target_get(
                 self.request, context['policy_target_id'])
             context['policy_target'] = policy_target
-        except Exception:
+        except AttributeError:
+            pass
+        except KeyError:
             pass
         return context
 
@@ -83,7 +85,9 @@ class ExternalPTGDetailsView(tabs.TabbedTableView):
             ext_policy_target = client.ext_policy_target_get(
                 self.request, context['ext_policy_target_id'])
             context['policy_target'] = ext_policy_target
-        except Exception:
+        except AttributeError:
+            pass
+        except KeyError:
             pass
         return context
 

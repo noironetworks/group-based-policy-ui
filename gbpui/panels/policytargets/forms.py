@@ -460,7 +460,9 @@ class AddConsumedPRSForm(forms.SelfHandlingForm):
             policy_rule_sets = [
                 (p.id, p.name) for p in items
                 if p.id not in consumedpolicy_rule_sets]
-        except Exception:
+        except AttributeError:
+            pass
+        except KeyError:
             pass
         self.fields['policy_rule_set'].choices = policy_rule_sets
 
@@ -508,7 +510,9 @@ class ExtAddConsumedPRSForm(forms.SelfHandlingForm):
             policy_rule_sets = [
                 (p.id, p.name) for p in items
                 if p.id not in consumedpolicy_rule_sets]
-        except Exception:
+        except AttributeError:
+            pass
+        except KeyError:
             pass
         self.fields['policy_rule_set'].choices = policy_rule_sets
 
@@ -557,7 +561,9 @@ class RemoveConsumedPRSForm(forms.SelfHandlingForm):
             policy_rule_sets = [(p.id, p.name)
                                 for p in items if p.id
                                 in consumedpolicy_rule_sets]
-        except Exception:
+        except AttributeError:
+            pass
+        except KeyError:
             pass
         self.fields['policy_rule_set'].choices = policy_rule_sets
 
@@ -605,7 +611,9 @@ class ExtRemoveConsumedPRSForm(forms.SelfHandlingForm):
             policy_rule_sets = [(p.id, p.name)
                                 for p in items if p.id
                                 in consumedpolicy_rule_sets]
-        except Exception:
+        except AttributeError:
+            pass
+        except KeyError:
             pass
         self.fields['policy_rule_set'].choices = policy_rule_sets
 
