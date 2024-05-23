@@ -592,7 +592,8 @@ class LaunchInstance(workflows.Workflow):
                             try:
                                 subnet = api.neutron.subnet_get(
                                     request, subnet_id)
-                            except Exception:
+                            except Exception as e:
+                                LOG.warning(str(e))
                                 continue
                             if IPAddress(fixed_ip) in \
                                     IPNetwork(subnet['cidr']):
