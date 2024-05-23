@@ -88,11 +88,11 @@ class DropdownEditWidget(TextInput):
     def render(self, name, value, attrs=None):
         text_html = super(DropdownEditWidget, self).render(
             name, value, attrs=attrs)
-        data_list = '<datalist id="list__%s">' % self._name
+        data_list = [format_html('<datalist id="list__{}">', self._name)]
         for item in self._list:
-            data_list += '<option value="%s">' % item
-        data_list += '</datalist>'
-        return mark_safe(text_html + data_list)
+            data_list.append(format_html('<option value="{}">', item))
+        data_list.append(mark_safe('</datalist>'))
+        return mark_safe(text_html + mark_safe("".join(data_list)))
 
 
 class TransferTableWidget(widgets.SelectMultiple):
@@ -134,7 +134,7 @@ class TransferTableWidget(widgets.SelectMultiple):
 
         open_tag = format_html('<d-table {}>', flatatt(final_attrs))
 
-        output = [open_tag, options, '</d-table>']
+        output = [open_tag, options, mark_safe('</d-table>')]
 
         return mark_safe('\n'.join(output))
 
