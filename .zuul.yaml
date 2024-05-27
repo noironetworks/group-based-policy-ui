@@ -12,44 +12,54 @@
     check:
       jobs:
         - openstack-tox-pep8:
+            voting: false
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
+        - openstack-tox-py27:
+            required-projects:
+              - name: openstack/requirements
+                override-checkout: ussuri-eol
         - openstack-tox-py35:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
         - openstack-tox-py36:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
         - openstack-tox-py37:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
         - test-release-openstack:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
     gate:
       jobs:
         - openstack-tox-pep8:
+            voting: false
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
+        - openstack-tox-py27:
+            required-projects:
+              - name: openstack/requirements
+                override-checkout: ussuri-eol
         - openstack-tox-py35:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
         - openstack-tox-py36:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
         - openstack-tox-py37:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
         - test-release-openstack:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/ussuri
+                override-checkout: ussuri-eol
