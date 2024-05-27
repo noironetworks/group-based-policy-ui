@@ -14,34 +14,34 @@
         - openstack-tox-pep8:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/zed
+                override-checkout: unmaintained/zed
         - openstack-tox-py38:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/zed
+                override-checkout: unmaintained/zed
         - openstack-tox-py39:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/zed
+                override-checkout: unmaintained/zed
         - test-release-openstack:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/zed
+                override-checkout: unmaintained/zed
     gate:
       jobs:
         - openstack-tox-pep8:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/zed
+                override-checkout: unmaintained/zed
         - openstack-tox-py38:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/zed
+                override-checkout: unmaintained/zed
         - openstack-tox-py39:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/zed
+                override-checkout: unmaintained/zed
         - test-release-openstack:
             required-projects:
               - name: openstack/requirements
-                override-checkout: stable/zed
+                override-checkout: unmaintained/zed
