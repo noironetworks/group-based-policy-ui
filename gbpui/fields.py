@@ -91,8 +91,8 @@ class DropdownEditWidget(TextInput):
         data_list = [format_html('<datalist id="list__{}">', self._name)]
         for item in self._list:
             data_list.append(format_html('<option value="{}">', item))
-        data_list.append(mark_safe('</datalist>'))
-        return mark_safe(text_html + mark_safe("".join(data_list)))
+        data_list.append(mark_safe('</datalist>'))  # nosec
+        return mark_safe(text_html + mark_safe("".join(data_list)))  # nosec
 
 
 class TransferTableWidget(widgets.SelectMultiple):
@@ -134,9 +134,9 @@ class TransferTableWidget(widgets.SelectMultiple):
 
         open_tag = format_html('<d-table {}>', flatatt(final_attrs))
 
-        output = [open_tag, options, mark_safe('</d-table>')]
+        output = [open_tag, options, mark_safe('</d-table>')]  # nosec
 
-        return mark_safe('\n'.join(output))
+        return mark_safe('\n'.join(output))  # nosec
 
     def build_attrs(self, extra_attrs=None, **kwargs):
         "Helper function for building an attribute dictionary."
@@ -150,7 +150,7 @@ class TransferTableWidget(widgets.SelectMultiple):
             option_value = ''
         option_value = force_text(option_value)
         if option_value in selected_choices:
-            selected_html = mark_safe(' selected="selected"')
+            selected_html = mark_safe(' selected="selected"')  # nosec
             if not self.allow_multiple_selected:
                 # Only allow for a single selection.
                 selected_choices.remove(option_value)

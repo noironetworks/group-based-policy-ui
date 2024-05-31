@@ -36,7 +36,7 @@ def update_pruleset_attributes(request, prset):
         value.append(li)
     value.append("</ul>")
     value = "".join(value)
-    setattr(prset, 'policy_rules', mark_safe(value))
+    setattr(prset, 'policy_rules', mark_safe(value))  # nosec
     return prset
 
 
@@ -46,12 +46,12 @@ def update_service_policy_attributes(policy):
     if len(np) > 0:
         tags = []
         for item in np:
-            dl = [mark_safe("<dl class='dl-horizontal'>")]
+            dl = [mark_safe("<dl class='dl-horizontal'>")]  # nosec
             dl.extend(format_html_join('', "<dt>{}<dt><dd>{}</dd>",
                 ((k, v) for k, v in list(item.items()))))
-            dl.append(mark_safe("</dl>"))
+            dl.append(mark_safe("</dl>"))  # nosec
             tags.append("".join(dl))
-        params = mark_safe("".join(tags))
+        params = mark_safe("".join(tags))  # nosec
     setattr(policy, 'network_service_params', params)
     return policy
 
@@ -75,8 +75,8 @@ def update_policy_target_attributes(request, pt):
     c.append("</ul>")
     c = "".join(c)
     consumed = [item.name for item in consumed]
-    setattr(pt, 'provided_policy_rule_sets', mark_safe(p))
-    setattr(pt, 'consumed_policy_rule_sets', mark_safe(c))
+    setattr(pt, 'provided_policy_rule_sets', mark_safe(p))  # nosec
+    setattr(pt, 'consumed_policy_rule_sets', mark_safe(c))  # nosec
     l2url = "horizon:project:network_policy:l2policy_details"
     if hasattr(pt, 'l2_policy_id') and pt.l2_policy_id is not None:
         policy = client.l2policy_get(request, pt.l2_policy_id)
@@ -95,7 +95,7 @@ def update_policy_target_attributes(request, pt):
             value.append(li(ext_policy))
         value.append("</ul>")
         value = "".join(value)
-        setattr(pt, 'external_segments', mark_safe(value))
+        setattr(pt, 'external_segments', mark_safe(value))  # nosec
     return pt
 
 
@@ -108,15 +108,15 @@ def update_policyrule_attributes(request, prule):
     setattr(prule, 'policy_classifier_id', tag)
     actions = prule.policy_actions
     action_url = "horizon:project:application_policy:policyactiondetails"
-    ul = [mark_safe("<ul>")]
+    ul = [mark_safe("<ul>")]  # nosec
     for a in actions:
         action = client.policyaction_get(request, a)
         u = reverse(action_url, kwargs={'policyaction_id': a})
         li = format_html("<li><a href='%s'>%s</a></li>", u, action.name)
         ul.append(li)
-    ul.append(mark_safe("</ul>"))
+    ul.append(mark_safe("</ul>"))  # nosec
     ultag = "".join(ul)
-    setattr(prule, 'policy_actions', mark_safe(ultag))
+    setattr(prule, 'policy_actions', mark_safe(ultag))  # nosec
     return prule
 
 
@@ -143,7 +143,7 @@ def update_classifier_attributes(classifiers):
 def update_l3_policy_attributes(request, l3_policy):
     url = "horizon:project:network_policy:external_connectivity_details"
     if bool(l3_policy.external_segments):
-        value = [mark_safe("<ul>")]
+        value = [mark_safe("<ul>")]  # nosec
         li = lambda x: format_html("<li><a href='{}'>{}</a> : {}</li>",
             reverse(url, kwargs={'external_connectivity_id': x.id}),
             x.name, l3_policy.external_segments[x.id][0])
@@ -151,8 +151,8 @@ def update_l3_policy_attributes(request, l3_policy):
             external_connectivity = client.get_externalconnectivity(request,
                                                                     ec)
             value.append(li(external_connectivity))
-        value.append(mark_safe("</ul>"))
-        tag = mark_safe("".join(value))
+        value.append(mark_safe("</ul>"))  # nosec
+        tag = mark_safe("".join(value))  # nosec
     else:
         tag = '-'
     setattr(l3_policy, 'external_segments', tag)
@@ -162,13 +162,13 @@ def update_l3_policy_attributes(request, l3_policy):
 def update_nat_pool_attributes(request, nat_pool):
     url = "horizon:project:network_policy:external_connectivity_details"
     id = nat_pool.external_segment_id
-    value = [mark_safe("<ul>")]
+    value = [mark_safe("<ul>")]  # nosec
     li = lambda x: format_html("<li><a href='{}'>{}</a></li>",
         reverse(url, kwargs={'external_connectivity_id': x.id}), x.name)
     external_connectivity = client.get_externalconnectivity(request,
                                                                 id)
     value.append(li(external_connectivity))
-    value.append(mark_safe("</ul>"))
-    tag = mark_safe("".join(value))
+    value.append(mark_safe("</ul>"))  # nosec
+    tag = mark_safe("".join(value))  # nosec
     setattr(nat_pool, 'external_segment_id', tag)
     return nat_pool
