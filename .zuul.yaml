@@ -12,15 +12,24 @@
     check:
       jobs:
         - openstack-tox-pep8:
-            voting: false
+            nodeset: ubuntu-bionic
+            ansible-version: 9
             required-projects:
               - name: openstack/requirements
                 override-checkout: train-eol
         - openstack-tox-py27:
+            ansible-version: 9
+            voting: false
             required-projects:
               - name: openstack/requirements
                 override-checkout: train-eol
         - openstack-tox-py35:
+            ansible-version: 9
+            required-projects:
+              - name: openstack/requirements
+                override-checkout: train-eol
+        - openstack-tox-py36:
+            ansible-version: 9
             required-projects:
               - name: openstack/requirements
                 override-checkout: train-eol
@@ -31,15 +40,24 @@
     gate:
       jobs:
         - openstack-tox-pep8:
-            voting: false
+            nodeset: ubuntu-bionic
+            ansible-version: 9
             required-projects:
               - name: openstack/requirements
                 override-checkout: train-eol
         - openstack-tox-py27:
+            ansible-version: 9
+            voting: false
             required-projects:
               - name: openstack/requirements
                 override-checkout: train-eol
         - openstack-tox-py35:
+            ansible-version: 9
+            required-projects:
+              - name: openstack/requirements
+                override-checkout: train-eol
+        - openstack-tox-py36:
+            ansible-version: 9
             required-projects:
               - name: openstack/requirements
                 override-checkout: train-eol
