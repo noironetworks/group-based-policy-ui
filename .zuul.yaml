@@ -14,46 +14,46 @@
         - openstack-tox-pep8:
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
         - openstack-tox-py36:
             ansible-version: 9
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
         - openstack-tox-py37:
             ansible-version: 9
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
         - openstack-tox-py38:
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
         - test-release-openstack:
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
     gate:
       jobs:
         - openstack-tox-pep8:
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
         - openstack-tox-py36:
             ansible-version: 9
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
         - openstack-tox-py37:
             ansible-version: 9
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
         - openstack-tox-py38:
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
         - test-release-openstack:
             required-projects:
               - name: openstack/requirements
-                override-checkout: unmaintained/wallaby
+                override-checkout: wallaby-eol
