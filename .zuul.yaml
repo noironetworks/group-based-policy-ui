@@ -20,7 +20,6 @@
               - name: openstack/requirements
                 override-checkout: unmaintained/yoga
         - openstack-tox-py39:
-            voting: False
             required-projects:
               - name: openstack/requirements
                 override-checkout: unmaintained/yoga
@@ -39,7 +38,6 @@
               - name: openstack/requirements
                 override-checkout: unmaintained/yoga
         - openstack-tox-py39:
-            voting: False
             required-projects:
               - name: openstack/requirements
                 override-checkout: unmaintained/yoga
