@@ -15,10 +15,6 @@
             required-projects:
               - name: openstack/requirements
                 override-checkout: stable/2024.2
-        - openstack-tox-py38:
-            required-projects:
-              - name: openstack/requirements
-                override-checkout: stable/2024.2
         - openstack-tox-py39:
             required-projects:
               - name: openstack/requirements
@@ -42,10 +38,6 @@
     gate:
       jobs:
         - openstack-tox-pep8:
-            required-projects:
-              - name: openstack/requirements
-                override-checkout: stable/2024.2
-        - openstack-tox-py38:
             required-projects:
               - name: openstack/requirements
                 override-checkout: stable/2024.2
