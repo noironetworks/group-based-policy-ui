@@ -127,7 +127,7 @@ def update_policyaction_attributes(request, paction):
 def update_classifier_attributes(classifiers):
     port_protocol_map = {'21': 'ftp', '25': 'smtp', '53': 'dns',
                         '80': 'http', '443': 'https'}
-    if type(classifiers) == list:
+    if isinstance(classifiers, list):
         for classifier in classifiers:
             classifier.set_id_as_name_if_empty()
             if classifier.protocol in ['tcp', 'udp'] and classifier.port_range\
