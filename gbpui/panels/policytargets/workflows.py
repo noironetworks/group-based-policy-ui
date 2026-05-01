@@ -30,8 +30,6 @@ from openstack_dashboard import api
 
 from openstack_dashboard.dashboards.project.instances \
     import utils as instance_utils
-from openstack_dashboard.dashboards.project.instances.workflows \
-    import create_instance as workflows_create_instance
 
 from gbpui import client
 from gbpui import fields
@@ -39,8 +37,21 @@ from gbpui import fields
 from netaddr import IPAddress
 from netaddr import IPNetwork
 
-
 LOG = logging.getLogger(__name__)
+
+# NOTE: create_instance workflow was removed in newer Horizon (Zed+)
+try:
+    from openstack_dashboard.dashboards.project.instances.workflows \
+        import create_instance as workflows_create_instance
+    CREATE_INSTANCE_AVAILABLE = True
+except ImportError:
+    workflows_create_instance = None
+    CREATE_INSTANCE_AVAILABLE = False
+    LOG.warning(
+        "Horizon create_instance workflow not available. "
+        "Disabling LaunchInstance workflow."
+    )
+
 
 POLICY_RULE_SET_URL = "horizon:project:application_policy:addpolicy_rule_set"
 ADD_EXTERNAL_CONNECTIVITY = \
@@ -492,12 +503,16 @@ class LaunchInstance(workflows.Workflow):
     finalize_button_name = _("Launch")
     success_message = _('Launched %(count)s.')
     multipart = True
-    default_steps = (workflows_create_instance.SelectProjectUser,
-                     workflows_create_instance.SetInstanceDetails,
-                     SetAccessControls,
-                     SetGroup,
-                     workflows_create_instance.PostCreationStep,
-                     workflows_create_instance.SetAdvanced)
+    if CREATE_INSTANCE_AVAILABLE:
+        default_steps = (workflows_create_instance.SelectProjectUser,
+                         workflows_create_instance.SetInstanceDetails,
+                         SetAccessControls,
+                         SetGroup,
+                         workflows_create_instance.PostCreationStep,
+                         workflows_create_instance.SetAdvanced)
+    else:
+        # Disable workflow cleanly
+        default_steps = ()
 
     def format_status_message(self, message):
         count = self.context.get('count', 1)
@@ -514,6 +529,13 @@ class LaunchInstance(workflows.Workflow):
 
     @sensitive_variables('context')
     def handle(self, request, context):
+        if not CREATE_INSTANCE_AVAILABLE:
+            msg = _("Launch Instance is not supported in this Horizon version "
+                    "(Angular workflow only).")
+            LOG.warning(msg)
+            exceptions.handle(request, msg)
+            return False
+
         custom_script = context.get('script_data', '')
         dev_mapping_1 = None
         dev_mapping_2 = None
