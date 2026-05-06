@@ -14,7 +14,7 @@ import logging
 from django import http
 from django import shortcuts
 from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
 from horizon import exceptions

@@ -14,7 +14,7 @@ from django import http
 from django.template.defaultfilters import filesizeformat  # noqa
 from django.urls import reverse
 from django.utils import html
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.decorators.debug import sensitive_variables  # noqa
 
 from horizon import exceptions

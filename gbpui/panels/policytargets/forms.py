@@ -15,7 +15,7 @@ import logging
 from django import http
 from django.urls import reverse
 from django.utils import html
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from horizon import exceptions
 from horizon import forms
