@@ -11,39 +11,39 @@
 # under the License.
 
 
-from django.conf.urls import url  # noqa
+from django.urls import re_path
 
 from gbpui.panels.application_policy import views
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^addpolicy_rule_set$', views.AddPolicyRuleSetView.as_view(),
+    re_path(r'^$', views.IndexView.as_view(), name='index'),
+    re_path(r'^addpolicy_rule_set$', views.AddPolicyRuleSetView.as_view(),
         name='addpolicy_rule_set'),
-    url(r'^addpolicyrule$', views.AddPolicyRuleView.as_view(),
+    re_path(r'^addpolicyrule$', views.AddPolicyRuleView.as_view(),
         name='addpolicyrule'),
-    url(r'^addpolicyclassifier$', views.AddPolicyClassifierView.as_view(),
+    re_path(r'^addpolicyclassifier$', views.AddPolicyClassifierView.as_view(),
         name='addpolicyclassifier'),
-    url(r'^addpolicyaction$', views.AddPolicyActionView.as_view(),
+    re_path(r'^addpolicyaction$', views.AddPolicyActionView.as_view(),
         name='addpolicyaction'),
-    url(r'^updatepolicy_rule_set/(?P<policy_rule_set_id>[^/]+)/$',
+    re_path(r'^updatepolicy_rule_set/(?P<policy_rule_set_id>[^/]+)/$',
         views.UpdatePolicyRuleSetView.as_view(), name='updatepolicy_rule_set'),
-    url(r'^updatepolicyrule/(?P<policyrule_id>[^/]+)/$',
+    re_path(r'^updatepolicyrule/(?P<policyrule_id>[^/]+)/$',
         views.UpdatePolicyRuleView.as_view(), name='updatepolicyrule'),
-    url(r'^updatepolicyclassifier/(?P<policyclassifier_id>[^/]+)/$',
+    re_path(r'^updatepolicyclassifier/(?P<policyclassifier_id>[^/]+)/$',
         views.UpdatePolicyClassifierView.as_view(),
         name='updatepolicyclassifier'),
-    url(r'^updatepolicyaction/(?P<policyaction_id>[^/]+)/$',
+    re_path(r'^updatepolicyaction/(?P<policyaction_id>[^/]+)/$',
         views.UpdatePolicyActionView.as_view(),
         name='updatepolicyaction'),
-    url(r'^policyrule/(?P<policyrule_id>[^/]+)/$',
+    re_path(r'^policyrule/(?P<policyrule_id>[^/]+)/$',
         views.PolicyRuleDetailsView.as_view(), name='policyruledetails'),
-    url(r'^policyclassifier/(?P<policyclassifier_id>[^/]+)/$',
+    re_path(r'^policyclassifier/(?P<policyclassifier_id>[^/]+)/$',
         views.PolicyClassifierDetailsView.as_view(),
         name='policyclassifierdetails'),
-    url(r'^policyaction/(?P<policyaction_id>[^/]+)/$',
+    re_path(r'^policyaction/(?P<policyaction_id>[^/]+)/$',
         views.PolicyActionDetailsView.as_view(),
         name='policyactiondetails'),
-    url(r'^policy_rule_set/(?P<policy_rule_set_id>[^/]+)/$',
+    re_path(r'^policy_rule_set/(?P<policy_rule_set_id>[^/]+)/$',
         views.PolicyRuleSetDetailsView.as_view(),
         name='policy_rule_set_details'),
 ]
