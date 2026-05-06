@@ -19,7 +19,7 @@ from gbpui.panels.application_policy import forms as policy_rule_set_forms
 from gbpui.panels.application_policy import tabs as policy_rule_set_tabs
 from gbpui.panels.application_policy import workflows as prs_workflows
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from gbpui.common import forms as gbforms
 
 PolicyRuleSetTabs = policy_rule_set_tabs.ApplicationPoliciesTabs
