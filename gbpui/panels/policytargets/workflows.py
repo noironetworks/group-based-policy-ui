@@ -18,7 +18,7 @@ from django import shortcuts
 from django.urls import reverse
 from django.utils import html
 from django.utils.text import normalize_newlines  # noqa
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.decorators.debug import sensitive_variables  # noqa
 
 from horizon import exceptions

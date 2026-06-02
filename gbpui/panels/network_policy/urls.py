@@ -11,7 +11,7 @@
 #    under the License.
 
 
-from django.conf.urls import url  # noqa
+from django.urls import re_path as url  # noqa
 
 from gbpui.panels.network_policy import views
 
